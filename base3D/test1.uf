@@ -1,0 +1,56 @@
+3D DEVICE test1
+
+LAYER FLOW
+
+PORT port_in, port_out r=2000;
+
+H 3DVALVE v1 radius=500 gap=100;
+
+H DIAMOND CHAMBER dc1 width=4000 length=10000 channelWidth=200;
+
+H 3DVALVE v2 radius=500 gap=100;
+
+CHANNEL ch_portin_v1 from port_in 2 to v1 4 w=200;
+CHANNEL ch_v1_dc1 from v1 2 to dc1 4 w=200;
+CHANNEL ch_dc1_v2 from dc1 2 to v2 4 w=200;
+CHANNEL ch_portout_v2 from port_out 4 to v2 2 w=200;
+
+
+
+END LAYER
+
+LAYER CONTROL
+
+PORT port_c_in , port_c_out r=2000;
+
+CHANNEL ch_port_c_in_v1 from port_c_in 3 to v1 1 w=200;
+CHANNEL ch_port_c_in_v2 from port_c_out 3 to v2 1 w=200;
+
+
+END LAYER
+
+BEHAVIOR 
+
+PROTOCOL RUN
+
+DO load;
+WAIT 30 S;
+DO unload;
+
+END PROTOCOL
+
+PROTOCOL load
+
+v1 SET ON;
+v2 SET OFF;
+
+END PROTOCOL
+
+PROTOCOL unload
+
+v1 SET OFF;
+v2 SET ON;
+
+END PROTOCOL
+
+END BEHAVIOR

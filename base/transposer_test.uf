@@ -1,0 +1,44 @@
+3D DEVICE transposer_test
+
+LAYER FLOW
+
+PORT p1, p2, p3, p4 r=500;
+NODE n1, n2, n3, n4;
+VIA v1, v2;
+H 3DVALVE v3d1 radius=500 gap=200;
+V 3DVALVE v3d2 radius=500 gap=200;
+V 3DVALVE v3d3 radius=500 gap=200;
+V 3DVALVE v3d4 radius=500 gap=200;
+V 3DVALVE v3d5 radius=500 gap=200;
+H 3DVALVE v3d6 radius=500 gap=200;
+
+CHANNEL c1 from p1 2 to n1 4 w=500;
+CHANNEL c2 from n1 2 to v3d1 4 w=500;
+CHANNEL c3 from v3d1 2 to n2 4 w=500;
+CHANNEL c4 from n2 2 to p2 4 w=500;
+
+CHANNEL c5 from p3 2 to n3 4 w=500;
+CHANNEL c6 from n3 2 to v3d6 4 w=500;
+CHANNEL c7 from v3d6 2 to n4 4 w=500;
+CHANNEL c8 from n4 2 to p4 4 w=500;
+
+CHANNEL c9 from n1 3 to v3d2 1 w=500;
+CHANNEL c10 from v3d2 3 to v3d5 1 w=500;
+CHANNEL c11 from v3d5 3 to n4 1 w=500;
+
+CHANNEL c12 from n2 3 to v3d3 1 w=500;
+CHANNEL c13 from v3d3 3 to v2 1 w=500;
+CHANNEL c14 from n3 1 to v3d4 3 w=500;
+CHANNEL c15 from v3d4 1 to v1 3 w=500;
+
+END LAYER
+
+LAYER CONTROL
+PORT cp1, cp2 r=500;
+
+NET n1 from cp1 4 to v3d1 1, v3d6 3 channelWidth=500;
+NET n2 from cp2 4 to v3d3 2, v3d5 2 channelWidth=500;
+CHANNEL cc1 from v3d2 2 to v3d4 4 w=500;
+CHANNEL cc2 from v3d4 2 to v3d5 4 w=500;
+CHANNEL cc3 from v1 6 to v2 8 w=500;
+END LAYER

@@ -1,0 +1,9 @@
+DEVICE simpletree
+
+LAYER FLOW
+
+PORT p1, p2, p3 r=100;
+
+V TREE t 1 to 2 channelWidth=100;
+
+END LAYER

@@ -1,0 +1,32 @@
+# 3x3 transposer array example 
+3D DEVICE transposer3x3
+LAYER FLOW
+PORT p1, p2, p3 r = 2020;
+PORT o1, o2, o3 r = 2020;
+TRANSPOSER t1 
+    valveRadius = 2000 valveGap = 1000
+    flowChannelWidth = 1000 
+    controlChannelWidth = 1000;
+TRANSPOSER t2 
+    valveRadius = 2000 valveGap = 1000
+    flowChannelWidth = 1000 
+    controlChannelWidth = 1000;
+TRANSPOSER t3 
+    valveRadius = 2000 valveGap = 1000
+    flowChannelWidth = 1000 
+    controlChannelWidth = 1000;
+# TRANSPOSER 1 INPUTS
+CHANNEL c1 from p1 2 to t1 1 w = 1000; 
+CHANNEL c2 from p2 2 to t1 2 w = 1000;
+# TRANSPOSER 1 OUTPUTS 
+CHANNEL c3 from t1 3 to t3 1 w = 1000;
+CHANNEL c4 from t1 4 to t2 1 w = 1000;
+# TRANSPOSER 2 INPUT PORT
+CHANNEL c5 from p3 2 to t2 2 w = 1000;
+# TRANSPOSER 2 OUTPUTS 
+CHANNEL c6 from t2 3 to t3 2 w = 1000;
+CHANNEL c7 from t2 4 to o3 4 w = 1000;
+# TRANSPOSER 3 OUTPUTS 
+CHANNEL c8 from t3 3 to o1 4 w = 1000;
+CHANNEL c9 from t3 4 to o2 4 w = 1000;
+END LAYER 

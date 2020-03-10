@@ -1,0 +1,19 @@
+DEVICE hmux01;
+
+LAYER FLOW
+H IN MUX m1 of 8 PORT r=200 flowChannelWidth=100 controlChannelWidth=20;
+PORT p1 r=200;
+
+CHANNEL c1 from p1 4 to m1 1 w=100;
+END LAYER
+
+LAYER CONTROL
+PORT cp1, cp2, cp3, cp4, cp5, cp6 r=200;
+
+CHANNEL cc1 from cp1 3 to m1 2 w=20;
+CHANNEL cc2 from cp2 1 to m1 3 w=20;
+CHANNEL cc3 from cp3 3 to m1 4 w=20;
+CHANNEL cc4 from cp4 1 to m1 5 w=20;
+CHANNEL cc5 from cp5 3 to m1 6 w=20;
+CHANNEL cc6 from cp6 1 to m1 7 w=20;
+END LAYER

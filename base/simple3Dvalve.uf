@@ -1,0 +1,13 @@
+DEVICE simple3Dvalve
+
+LAYER FLOW
+
+PORT p1, p2 r=100;
+
+H 3DVALVE v radius=2000 gap=1000;
+
+CHANNEL c1 from p1 2 to v 4 w=100;
+CHANNEL c2 from p2 4 to v 2 w=100;
+
+END LAYER
+

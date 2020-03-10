@@ -1,0 +1,52 @@
+DEVICE xgrid_4
+
+LAYER FLOW
+SQUARE CELL TRAP ct1_1, ct1_2, ct1_3, ct1_4, ct2_1, ct2_2, ct2_3, ct2_4, ct3_1, ct3_2, ct3_3, ct3_4, ct4_1, ct4_2, ct4_3, ct4_4 chamberWidth=100 chamberLength=100 channelWidth=100;
+
+NODE nl1, nr1, nt1, nb1, nl2, nr2, nt2, nb2, nl3, nr3, nt3, nb3, nl4, nr4, nt4, nb4;
+
+CHANNEL ch_ct1_1_nt1 from ct1_1 1 to nt1 3 w=100;
+CHANNEL ch_ct1_2_nt2 from ct1_2 1 to nt2 3 w=100;
+CHANNEL ch_ct1_3_nt3 from ct1_3 1 to nt3 3 w=100;
+CHANNEL ch_ct1_4_nt4 from ct1_4 1 to nt4 3 w=100;
+CHANNEL ch_ct2_1_ct1_1 from ct2_1 1 to ct1_1 3 w=100;
+CHANNEL ch_ct2_2_ct1_2 from ct2_2 1 to ct1_2 3 w=100;
+CHANNEL ch_ct2_3_ct1_3 from ct2_3 1 to ct1_3 3 w=100;
+CHANNEL ch_ct2_4_ct1_4 from ct2_4 1 to ct1_4 3 w=100;
+CHANNEL ch_ct3_1_ct2_1 from ct3_1 1 to ct2_1 3 w=100;
+CHANNEL ch_ct3_2_ct2_2 from ct3_2 1 to ct2_2 3 w=100;
+CHANNEL ch_ct3_3_ct2_3 from ct3_3 1 to ct2_3 3 w=100;
+CHANNEL ch_ct3_4_ct2_4 from ct3_4 1 to ct2_4 3 w=100;
+CHANNEL ch_ct4_1_ct3_1 from ct4_1 1 to ct3_1 3 w=100;
+CHANNEL ch_ct4_2_ct3_2 from ct4_2 1 to ct3_2 3 w=100;
+CHANNEL ch_ct4_3_ct3_3 from ct4_3 1 to ct3_3 3 w=100;
+CHANNEL ch_ct4_4_ct3_4 from ct4_4 1 to ct3_4 3 w=100;
+
+CHANNEL ch_ct1_1_ct1_2 from ct1_1 2 to ct1_2 4 w=100;
+CHANNEL ch_ct1_2_ct1_3 from ct1_2 2 to ct1_3 4 w=100;
+CHANNEL ch_ct1_3_ct1_4 from ct1_3 2 to ct1_4 4 w=100;
+CHANNEL ch_ct1_4_nr1 from ct1_4 2 to nr1 4 w=100;
+CHANNEL ch_ct2_1_ct2_2 from ct2_1 2 to ct2_2 4 w=100;
+CHANNEL ch_ct2_2_ct2_3 from ct2_2 2 to ct2_3 4 w=100;
+CHANNEL ch_ct2_3_ct2_4 from ct2_3 2 to ct2_4 4 w=100;
+CHANNEL ch_ct2_4_nr2 from ct2_4 2 to nr2 4 w=100;
+CHANNEL ch_ct3_1_ct3_2 from ct3_1 2 to ct3_2 4 w=100;
+CHANNEL ch_ct3_2_ct3_3 from ct3_2 2 to ct3_3 4 w=100;
+CHANNEL ch_ct3_3_ct3_4 from ct3_3 2 to ct3_4 4 w=100;
+CHANNEL ch_ct3_4_nr3 from ct3_4 2 to nr3 4 w=100;
+CHANNEL ch_ct4_1_ct4_2 from ct4_1 2 to ct4_2 4 w=100;
+CHANNEL ch_ct4_2_ct4_3 from ct4_2 2 to ct4_3 4 w=100;
+CHANNEL ch_ct4_3_ct4_4 from ct4_3 2 to ct4_4 4 w=100;
+CHANNEL ch_ct4_4_nr4 from ct4_4 2 to nr4 4 w=100;
+
+CHANNEL ch_ct1_1_nl1 from ct1_1 4 to nl1 2 w=100;
+CHANNEL ch_ct2_1_nl2 from ct2_1 4 to nl2 2 w=100;
+CHANNEL ch_ct3_1_nl3 from ct3_1 4 to nl3 2 w=100;
+CHANNEL ch_ct4_1_nl4 from ct4_1 4 to nl4 2 w=100;
+
+CHANNEL ch_ct4_1_nb1 from ct4_1 3 to nb1 1 w=100;
+CHANNEL ch_ct4_2_nb2 from ct4_2 3 to nb2 1 w=100;
+CHANNEL ch_ct4_3_nb3 from ct4_3 3 to nb3 1 w=100;
+CHANNEL ch_ct4_4_nb4 from ct4_4 3 to nb4 1 w=100;
+
+END LAYER

@@ -1,0 +1,32 @@
+# .uf output by muShroomMapper
+3D DEVICE testDevice
+
+LAYER FLOW
+
+
+PORT outPort0 r=100;
+
+V BANK FBank of 9 PORT r=100 dir=RIGHT spacing=3000 channelWidth=100;
+NODE fDevice0_node;
+NODE fDevice1_node;
+NODE fDevice2_node;
+NODE fDevice3_node;
+
+
+CHANNEL flowChannel0 from FBank 1 to fDevice0_node 1 w=100;
+CHANNEL flowChannel1 from FBank 2 to fDevice0_node 4 w=100;
+CHANNEL flowChannel2 from FBank 3 to fDevice0_node 3 w=100;
+CHANNEL flowChannel3 from FBank 4 to fDevice1_node 1 w=100;
+CHANNEL flowChannel4 from FBank 5 to fDevice1_node 4 w=100;
+CHANNEL flowChannel5 from FBank 6 to fDevice1_node 3 w=100;
+CHANNEL flowChannel6 from FBank 7 to fDevice2_node 1 w=100;
+CHANNEL flowChannel7 from FBank 8 to fDevice2_node 4 w=100;
+CHANNEL flowChannel8 from FBank 9 to fDevice2_node 3 w=100;
+CHANNEL flowChannel9 from fDevice3_node 2 to outPort0 4 w=100;
+CHANNEL flowChannel10 from fDevice0_node 2 to fDevice3_node 1 w=100;
+CHANNEL flowChannel11 from fDevice1_node 2 to fDevice3_node 4 w=100;
+CHANNEL flowChannel12 from fDevice2_node 2 to fDevice3_node 3 w=100;
+
+
+END LAYER
+

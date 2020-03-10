@@ -1,0 +1,52 @@
+DEVICE terminalbank_test
+
+#V TERMINAL BANK tb_left from 1 to 2 spacing=5000;
+#V TERMINAL BANK tb_right from 3 to 4 spacing=5000;
+
+H TERMINAL BANK tb_up from 1 to 3 spacing=5000;
+H TERMINAL BANK tb_down from 4 to 6 spacing=5000;
+
+LAYER FLOW
+
+SQUARE CELL TRAP ct_1_1, ct_2_1, ct_3_1 chamberWidth=200 chamberLength=200 channelWidth=100 ;
+SQUARE CELL TRAP ct_1_2, ct_2_2, ct_3_2 chamberWidth=200 chamberLength=200 channelWidth=100 ;
+#Horizontal channels from left tb to cell traps
+
+#CHANNEL ch_tb_left_ct_1_1 from tb_left 1 to ct_1_1 4 w=100;
+#CHANNEL ch_tb_left_ct_1_2 from tb_left 2 to ct_1_2 4 w=100;
+
+#Horizontal channels from right tb to cell traps
+
+#CHANNEL ch_tb_right_ct_2_1 from tb_right 1 to ct_2_1 2 w=100;
+#CHANNEL ch_tb_right_ct_2_2 from tb_right 2 to ct_2_2 2 w=100;
+
+#Vertical channels from top tb to cell traps
+
+CHANNEL ch_tb_up_ct_1_1 from tb_up 1 to ct_1_1 1 w=100;
+CHANNEL ch_tb_up_ct_2_1 from tb_up 2 to ct_2_1 1 w=100;
+CHANNEL ch_tb_up_ct_3_1 from tb_up 3 to ct_3_1 1 w=100;
+
+#Vertical channels from down tb to cell traps
+
+CHANNEL ch_tb_down_ct_1_1 from tb_down 1 to ct_1_2 3 w=100;
+CHANNEL ch_tb_down_ct_2_1 from tb_down 2 to ct_2_2 3 w=100;
+CHANNEL ch_tb_down_ct_2_1 from tb_down 3 to ct_3_2 3 w=100;
+
+#intermediate horizontal channels
+
+CHANNEL ch_ct_1_1_ct_2_1 from ct_1_1 2 to ct_2_1 4 w=100;
+CHANNEL ch_ct_2_1_ct_3_1 from ct_2_1 2 to ct_3_1 4 w=100;
+
+CHANNEL ch_ct_1_2_ct_2_2 from ct_1_2 2 to ct_2_2 4 w=100;
+CHANNEL ch_ct_2_2_ct_3_2 from ct_2_2 2 to ct_3_2 4 w=100;
+
+#intermediate vertical channels
+
+CHANNEL ch_ct_1_1_ct_1_2 from ct_1_1 3 to ct_1_2 1 w=100;
+CHANNEL ch_ct_2_1_ct_2_2 from ct_2_1 3 to ct_2_2 1 w=100;
+CHANNEL ch_ct_3_1_ct_3_2 from ct_3_1 3 to ct_3_2 1 w=100;
+
+END LAYER
+
+
+

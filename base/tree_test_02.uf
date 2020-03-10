@@ -1,0 +1,8 @@
+DEVICE tree_test_01
+
+LAYER FLOW
+
+H IN TREE ct0 of 2 LONG CELL TRAP numChambers=10 chamberLength=100 chamberWidth=100 chamberSpacing=30 flowChannelWidth=100 controlChannelWidth=20;
+
+
+END LAYER

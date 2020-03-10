@@ -1,0 +1,49 @@
+DEVICE node_test_01
+
+LAYER FLOW
+
+H MUX m1 1 to 8 spacing=1000 flowChannelWidth=100 controlChannelWidth=20;
+NODE n1;
+PORT p1, p2, p3 r=100;
+H BANK portbank1 of 8 PORT dir=UP spacing=1000 channelWidth=100;
+
+CHANNEL c0 from m1 1 to n1 3 w=100;
+CHANNEL ctop from n1 1 to p1 3 w=100;
+CHANNEL cright from n1 2 to p2 4 w=100;
+CHANNEL cleft from n1 4 to p3 2 w=100;
+
+CHANNEL cpb1 from portbank1 1 to m1 2 w=100;
+CHANNEL cpb2 from portbank1 2 to m1 3 w=100;
+CHANNEL cpb3 from portbank1 3 to m1 4 w=100;
+CHANNEL cpb4 from portbank1 4 to m1 5 w=100;
+CHANNEL cpb5 from portbank1 5 to m1 6 w=100;
+CHANNEL cpb6 from portbank1 6 to m1 7 w=100;
+CHANNEL cpb7 from portbank1 7 to m1 8 w=100;
+CHANNEL cpb8 from portbank1 8 to m1 9 w=100;
+
+END LAYER
+
+LAYER CONTROL
+
+VALVE vtop on ctop w=200 l=100;
+VALVE vright on cright w=100 l=200;
+VALVE vleft on cleft w=100 l=200; 
+PORT cp1, cp2, cp3 r=100;
+
+CHANNEL cca from cp1 3 to vtop 2 w=20;
+CHANNEL ccb from cp2 3 to vright 1 w=20;
+CHANNEL ccc from cp3 3 to vleft 1 w=20;
+
+#V BANK cportbank_right of 3 PORT dir=LEFT spacing=1000 channelWidth=20;
+PORT ccpr1,ccpr2,ccpr3 r=100;
+PORT ccpl1,ccpl2,ccpl3 r=100;
+
+CHANNEL cpbr1 from ccpr1 4 to m1 10 w=20;
+CHANNEL cpbr2 from ccpr2 4 to m1 12 w=20;
+CHANNEL cpbr3 from ccpr3 4 to m1 14 w=20;
+
+CHANNEL cpbl1 from ccpl1 2 to m1 11 w=20;
+CHANNEL cpbl2 from ccpl2 2 to m1 13 w=20;
+CHANNEL cpbl3 from ccpl3 2 to m1 15 w=20;
+
+END LAYER

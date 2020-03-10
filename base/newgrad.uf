@@ -1,0 +1,24 @@
+DEVICE newgrad
+
+LAYER FLOW
+
+PORT p1,p2 r=100;
+H BANK po of 8 PORT r=100 dir=UP spacing=1200 channelWidth=100;
+V GRADIENT GENERATOR g 2 to 8 numBends=5 bendSpacing=100 bendLength=500 channelWidth=100 ;
+
+CHANNEL c1 from p1 3 to g 1 w=100;
+CHANNEL c2 from p2 3 to g 2 w=100;
+
+CHANNEL c3 from po 1 to g 3 w=100;
+CHANNEL c4 from po 2 to g 4 w=100;
+CHANNEL c5 from po 3 to g 5 w=100;
+CHANNEL c6 from po 4 to g 6 w=100;
+CHANNEL c7 from po 5 to g 7 w=100;
+CHANNEL c8 from po 6 to g 8 w=100;
+CHANNEL c9 from po 7 to g 9 w=100;
+CHANNEL c10 from po 8 to g 10 w=100;
+
+END LAYER 
+
+
+

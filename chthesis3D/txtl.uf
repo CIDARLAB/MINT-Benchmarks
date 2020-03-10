@@ -1,0 +1,28 @@
+3D DEVICE txtl
+
+LAYER FLOW
+
+PORT p1 r=400;
+PORT p2 r=400;
+PORT p3 r=400;
+NODE n1;
+V MIXER m1 numBends=10 bendSpacing=500 bendLength=20000 channelWidth=400;
+H 3DVALVE v1 valveRadius=500 gap=400;
+H 3DVALVE v2 valveRadius=500 gap=400;
+CHANNEL c1 from p1 2 to v1 4 w=400;
+CHANNEL c2 from v1 2 to n1 4 w=400;
+CHANNEL c3 from p2 4 to v2 2 w=400;
+CHANNEL c4 from v2 4 to n1 2 w=400;
+CHANNEL c5 from n1 3 to m1 1 w=400;
+CHANNEL c6 from m1 2 to p3 1 w=400;
+
+END LAYER
+
+LAYER CONTROL
+
+PORT cp1, cp2 r=400;
+
+CHANNEL cc1 from cp1 3 to v1 1 w=200;
+CHANNEL cc2 from cp2 3 to v2 1 w=200;
+
+END LAYER

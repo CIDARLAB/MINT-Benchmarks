@@ -1,0 +1,12 @@
+DEVICE dropletmixer
+
+LAYER FLOW
+
+V DROPLET GENERATOR FLOW FOCUS ff radius=100 oilChannelWidth=100 waterChannelWidth=40 angle=30 length=500;
+PORT p r=100;
+V MIXER mixer numBends=5 bendSpacing=100 bendLength=10000 channelWidth=100;
+CHANNEL c1 from ff 1 to mixer 1 w=100;
+CHANNEL c3 from mixer 2 to p 1 w=100;
+
+END LAYER
+

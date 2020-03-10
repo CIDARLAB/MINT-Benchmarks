@@ -1,0 +1,14 @@
+DEVICE tapertest 
+
+LAYER FLOW 
+
+PORT port_in, port_out r=100;
+
+V TAPER taper  maxWidth=100 taperingDegree=1 channelLength=200 ;
+
+CHANNEL c1 from port_in 3 to taper 1 w=100;
+CHANNEL c2 from taper 2 to port_out 1 w=100;
+
+END LAYER
+
+

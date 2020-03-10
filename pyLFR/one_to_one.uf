@@ -1,0 +1,11 @@
+DEVICE onetoone
+
+LAYER FLOW
+PORT in portRadius=2000 ;
+PORT out portRadius=2000 ;
+MIXER MIXER_1 numBends=5 bendSpacing=2000 bendLength=2000 channelWidth=400 height=400 ; 
+
+CHANNEL channel_1 from in 4 to MIXER_1 1 channelWidth=400 height=400  ;
+CHANNEL channel_2 from MIXER_1 2 to out 1  channelWidth=400 height=400  ;
+
+END LAYER

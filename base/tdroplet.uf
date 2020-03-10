@@ -1,0 +1,12 @@
+DEVICE tdroplet
+
+LAYER FLOW
+
+H DROPLET GENERATOR T tdgen radius=1000 oilChannelWidth=100 waterChannelWidth=10 ;
+
+PORT p r=1000;
+
+CHANNEL ch from tdgen 1 to p 4 width=100;
+
+END LAYER
+

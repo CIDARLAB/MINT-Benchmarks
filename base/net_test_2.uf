@@ -1,0 +1,10 @@
+DEVICE net_test_2
+
+LAYER FLOW
+END LAYER
+
+LAYER CONTROL
+PORT p1, p2, p3 r=100;
+NET from p3 1 to p1 4, p2 4 channelWidth=50;
+END LAYER
+

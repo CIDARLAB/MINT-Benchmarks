@@ -1,0 +1,53 @@
+DEVICE test_chambers_01 
+
+LAYER FLOW
+PORT p1, p2, p3, p4, p5, p6, p7, p8 r=100;
+SQUARE CELL TRAP ct1, ct2, ct3, ct4 channelWidth=100 chamberLength=100 chamberWidth=100;
+NODE n1, n2, n3, n4, n5;
+
+CHANNEL c1 from p1 2 to ct1 4 w=50;
+CHANNEL c2 from p2 3 to ct1 1 w=50;
+CHANNEL c3 from p3 3 to ct2 1 w=50;
+CHANNEL c4 from p4 4 to ct2 2 w=50;
+CHANNEL c5 from p5 4 to ct3 2 w=50;
+CHANNEL c6 from p6 1 to ct3 3 w=50;
+CHANNEL c7 from p7 1 to ct4 3 w=50;
+CHANNEL c8 from p8 2 to ct4 4 w=50;
+
+CHANNEL c9 from n5 1 to n1 3 w=50;
+CHANNEL c10 from n5 2 to n2 4 w=50;
+CHANNEL c11 from n5 3 to n3 1 w=50;
+CHANNEL c12 from n5 4 to n4 2 w=50;
+CHANNEL c13 from n1 4 to ct1 2 w=50;
+CHANNEL c14 from n1 2 to ct2 4 w=50;
+CHANNEL c15 from n2 1 to ct2 3 w=50;
+CHANNEL c16 from n2 3 to ct3 1 w=50;
+CHANNEL c17 from n3 2 to ct3 4 w=50;
+CHANNEL c19 from n3 4 to ct4 2 w=50;
+CHANNEL c19 from n4 3 to ct4 1 w=50;
+CHANNEL c20 from n4 1 to ct1 3 w=50;
+
+
+
+
+
+END LAYER
+
+LAYER CONTROL
+
+PORT cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp15, cp16, cp17, cp18 r=100;
+VALVE v1 on c1 w=100 l=200;
+VALVE v2 on c2 w=100 l=200;
+VALVE v3 on c3 w=100 l=200;
+VALVE v4 on c4 w=100 l=200;
+VALVE v5 on c9 w=100 l=200;
+VALVE v6 on c10 w=100 l=200;
+CHANNEL c14 from cp1 3 to v1 1 w=50;
+CHANNEL c15 from v1 3 to v3 1 w=50;
+CHANNEL c16 from cp2 1 to v4 3 w=50;
+CHANNEL c17 from v4 1 to v2 3 w=50;
+CHANNEL c18 from cp3 3 to v5 1 w=50;
+CHANNEL c19 from cp4 1 to v6 3 w=50;
+
+END LAYER
+

@@ -1,0 +1,25 @@
+DEVICE simplemixer
+
+LAYER FLOW
+
+PORT p1, p2 r=100;
+
+H MIXER m numBends=5 bendLength=400 
+	channelWidth=100 bendSpacing=200;
+
+CHANNEL c1 from p1 2 to m 1 w=100;
+
+CHANNEL c2 from p2 4 to m 2 w=100;
+
+END LAYER 
+
+LAYER CONTROL
+
+PORT cp1 r=100;
+
+VALVE v on c1 l=200 w=100;
+
+CHANNEL cc from v 1 to cp1 3 w=50;
+
+END LAYER
+

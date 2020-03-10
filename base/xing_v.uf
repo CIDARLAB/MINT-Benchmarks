@@ -1,0 +1,32 @@
+DEVICE xing_v
+
+LAYER FLOW
+H BANK b1 of 3 PORT r=100 dir=DOWN spacing=1500 channelWidth=100;
+H BANK b2 of 3 PORT r=100 dir=UP spacing=1500 channelWidth=100;
+
+NODE n1, n2, n3, n4, n5, n6;
+
+CHANNEL c1 from b1 1 to n1 1 w=100;
+CHANNEL c2 from b1 2 to n2 1 w=100;
+CHANNEL c3 from b1 3 to n3 1 w=100;
+CHANNEL c4 from n1 3 to n4 1 w=100;
+CHANNEL c5 from n2 3 to n5 1 w=100;
+CHANNEL c6 from n3 3 to n6 1 w=100;
+CHANNEL c7 from n4 3 to b2 1 w=100;
+CHANNEL c8 from n5 3 to b2 2 w=100;
+CHANNEL c9 from n6 3 to b2 3 w=100;
+CHANNEL c10 from n1 2 to n2 4 w=100;
+CHANNEL c11 from n2 2 to n3 4 w=100;
+
+END LAYER
+
+LAYER CONTROL
+PORT cp1 r=100;
+NODE cn1, cn2;
+VALVE v1 on c10 w=100 l=200;
+VALVE v2 on c11 w=100 l=200;
+
+
+NET cn from cp1 1 to v1 3 , v2 3 w=50;
+
+END LAYER

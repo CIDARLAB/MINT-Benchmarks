@@ -1,0 +1,24 @@
+3D DEVICE mixer_3d
+
+LAYER FLOW
+
+H BANK pb1 of 3 PORT r=600 dir=DOWN spacing=10000 channelWidth=800;
+NODE n1, n2, n3;
+PORT p1 r=600;
+V GRADIENT GENERATOR g1 2 to 6 numBends=5 bendSpacing=500 bendLength=2000 channelWidth=800;
+V 3DVALVE v1 radius=1000 gap=400;
+V 3DVALVE v2 radius=1000 gap=400;
+V 3DVALVE v3 radius=1000 gap=400;
+CHANNEL c1 from pb1 1 to v1 1 w=800;
+CHANNEL c2 from pb1 2 to v2 1 w=800;
+CHANNEL c3 from pb1 3 to v3 1 w=800;
+CHANNEL c4 from v1 3 to n1 4 w=800;
+CHANNEL c5 from v2 3 to n2 1 w=800;
+CHANNEL c6 from v3 3 to n3 2 w=800;
+CHANNEL c7 from n1 2 to n2 4 w=800;
+CHANNEL c8 from n2 2 to n3 4 w=800;
+CHANNEL c9 from n1 3 to g1 1 w=800;
+CHANNEL c10 from n3 3 to g1 2 w=800;
+CHANNEL c11 from g1 3 to p1 1 w=2400;
+
+END LAYER

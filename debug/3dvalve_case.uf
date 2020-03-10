@@ -1,0 +1,31 @@
+# .uf output by muShroomMapper
+#this device spits out an error / it seems like the system doen't
+#recognize the channel crossing.
+3D DEVICE testDevice
+
+LAYER FLOW
+
+
+PORT outPort0 r=100;
+
+V BANK FBank of 2 PORT r=100 dir=RIGHT spacing=1200 channelWidth=100;
+V TREE fDevice0_YMixer 2 to 1 spacing=1200 flowChannelWidth=100;
+
+H 3DVALVE cDevice0_3DValve radius=250 gap=75;
+
+CHANNEL flowChannel0 from FBank 1 to cDevice0_3DValve 4 w=100;
+CHANNEL flowChannel1 from FBank 2 to fDevice0_YMixer 2 w=100;
+CHANNEL flowChannel2 from fDevice0_YMixer 3 to outPort0 4 w=100;
+CHANNEL flowChannel3 from cDevice0_3DValve 2 to fDevice0_YMixer 1 w=100;
+
+
+END LAYER
+
+LAYER CONTROL
+
+
+H BANK CBank of 1 PORT r=100 dir=UP spacing=2500 channelWidth=100;
+CHANNEL controlChannel0 from CBank 1 to cDevice0_3DValve 3 w=100;
+
+
+END LAYER

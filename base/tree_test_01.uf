@@ -1,0 +1,22 @@
+DEVICE tree_test_01
+
+LAYER FLOW
+
+V BANK b0 of 8 PORT r=100 dir=RIGHT channelWidth=100;
+H IN TREE ct0 of 8 LONG CELL TRAP numChambers=10 chamberLength=100 chamberWidth=100 chamberSpacing=30 flowChannelWidth=100 controlChannelWidth=20;
+PORT p0 r=100;
+
+CHANNEL c0 from ct0 9 to p0 4;
+CHANNEL c1 from ct0 1 to b0 1;
+CHANNEL c2 from ct0 2 to b0 2;
+CHANNEL c3 from ct0 3 to b0 3;
+CHANNEL c4 from ct0 4 to b0 4;
+CHANNEL c5 from ct0 5 to b0 5;
+CHANNEL c6 from ct0 6 to b0 6;
+CHANNEL c7 from ct0 7 to b0 7;
+CHANNEL c8 from ct0 8 to b0 8;
+
+END LAYER
+
+LAYER CONTROL
+END LAYER 

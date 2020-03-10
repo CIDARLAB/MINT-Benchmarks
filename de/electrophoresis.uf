@@ -1,0 +1,14 @@
+DEVICE electrophoresis
+
+LAYER FLOW
+
+PORT p_in1, p_in2 r=100;
+
+H GRADIENT GENERATOR g 2 to 8 numBends=5 bendSpacing=100 bendLength=500 channelWidth=100;
+
+#H TAPER t1, t2, t3, t4, t5, t6, t7, t8 maxWidth=50 taperingDegree=1 length=3000;
+
+#CHANNEL c1 from 
+
+END LAYER
+

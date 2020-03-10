@@ -1,0 +1,48 @@
+DEVICE logic_test_01
+
+LAYER FLOW
+
+LOGIC ARRAY la flowChannelWidth=100 controlChannelWidth=50 chamberLength=200 chamberWidth=200 r=200;
+
+PORT p1, p2, p3 r=100;
+
+CHANNEL c1 from la 1 to p1 2 w=100;
+CHANNEL c2 from la 2 to p2 2 w=100;
+CHANNEL c3 from la 3 to p3 2 w=100;
+
+END LAYER
+
+LAYER CONTROL
+
+PORT pc1, pc2, pc3 r=100;
+
+CHANNEL cx1 from la 24 to pc1 3 w=50;
+CHANNEL cx2 from la 25 to pc2 3 w=50;
+CHANNEL cx3 from la 26 to pc3 1 w=50;
+
+PORT pc4, pc5, pc6, pc7, pc8, pc9, pc10, pc11, pc12, pc13, pc14, pc15, pc16, pc17, pc18, pc19, pc20, pc21, pc22, pc23 r=100;
+
+CHANNEL cx4 from la 4 to pc4 4 w=50;
+CHANNEL cx5 from la 5 to pc5 4 w=50;
+CHANNEL cx6 from la 6 to pc6 4 w=50;
+CHANNEL cx7 from la 7 to pc7 4 w=50;
+CHANNEL cx8 from la 8 to pc8 4 w=50;
+CHANNEL cx9 from la 9 to pc9 4 w=50;
+CHANNEL cx10 from la 10 to pc10 4 w=50;
+CHANNEL cx11 from la 11 to pc11 4 w=50;
+CHANNEL cx12 from la 12 to pc12 4 w=50;
+CHANNEL cx13 from la 13 to pc13 4 w=50;
+CHANNEL cx14 from la 14 to pc14 4 w=50;
+CHANNEL cx15 from la 15 to pc15 4 w=50;
+CHANNEL cx16 from la 16 to pc10 4 w=50;
+CHANNEL cx17 from la 17 to pc11 4 w=50;
+CHANNEL cx18 from la 18 to pc12 4 w=50;
+CHANNEL cx19 from la 19 to pc13 4 w=50;
+CHANNEL cx20 from la 20 to pc14 4 w=50;
+CHANNEL cx21 from la 21 to pc15 4 w=50;
+CHANNEL cx22 from la 22 to pc15 4 w=50;
+CHANNEL cx23 from la 23 to pc15 4 w=50;
+
+END LAYER
+
+
